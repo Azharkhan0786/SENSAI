@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, LayoutDashboard, PenBox, StarsIcon, FileText, GraduationCap } from 'lucide-react'
 import { Button } from './button'
+import { checkUser } from '@/lib/checkuser'
 
 
 import {
@@ -20,7 +21,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-function Header() {
+async function Header() {
+  await checkUser();
   return (
 
     <header className='fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60'>
